@@ -248,8 +248,8 @@ export const oauthProvider = <O extends OAuthOptions<Scope[]>>(options: O) => {
 						// but clearing the login prompt cookie if forced login prompt
 
 						// Guard against missing request state context in serverless environments
-  					// Fixes: https://github.com/better-auth/better-auth/issues/6613
-  					if (!(await hasRequestState())) return;
+						// Fixes: https://github.com/better-auth/better-auth/issues/6613
+						if (!(await hasRequestState())) return;
 
 						const _query =
 							(await oAuthState.get())?.query ??
